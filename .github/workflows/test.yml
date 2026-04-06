@@ -36,9 +36,7 @@ jobs:
 
       - run: npm ci
 
-      - name: Set Hardhat keystore secrets
-        run: |
-          npx hardhat keystore set SEPOLIA_RPC_URL --dev --value "${{ secrets.SEPOLIA_RPC_URL }}"
-          npx hardhat keystore set SEPOLIA_PRIVATE_KEY --dev --value "${{ secrets.SEPOLIA_PRIVATE_KEY }}"
-
       - run: npm run test:integration
+        env:
+          HARDHAT_VAR_SEPOLIA_RPC_URL: ${{ secrets.SEPOLIA_RPC_URL }}
+          HARDHAT_VAR_SEPOLIA_PRIVATE_KEY: ${{ secrets.SEPOLIA_PRIVATE_KEY }}
