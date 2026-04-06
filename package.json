@@ -1,0 +1,30 @@
+{
+  "name": "web3-hardhat-playground",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "hardhat test",
+    "test:js": "hardhat test test/Counter.ts",
+    "test:sol": "hardhat test \"contracts/**/*.t.sol\"",
+    "test:smoke": "hardhat test --grep \"smoke\"",
+    "test:regression": "hardhat test --grep \"regression\"",
+    "test:integration": "hardhat test test/Counter.sepolia.ts --network sepolia"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-ignition": "^3.1.0",
+    "@nomicfoundation/hardhat-toolbox-viem": "^5.0.3",
+    "@types/node": "^22.19.15",
+    "forge-std": "github:foundry-rs/forge-std#v1.9.4",
+    "hardhat": "^3.2.0",
+    "typescript": "~5.8.0",
+    "viem": "^2.47.6"
+  },
+  "type": "module",
+  "dependencies": {
+    "dotenv": "^17.3.1"
+  }
+}
