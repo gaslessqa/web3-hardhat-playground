@@ -1,0 +1,44 @@
+name: Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  unit:
+    name: Unit tests (local)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - run: npm run test:js
+
+  integration:
+    name: Integration tests (Sepolia)
+    runs-on: ubuntu-latest
+    needs: unit
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Set Hardhat keystore secrets
+        run: |
+          npx hardhat keystore set SEPOLIA_RPC_URL --dev --value "${{ secrets.SEPOLIA_RPC_URL }}"
+          npx hardhat keystore set SEPOLIA_PRIVATE_KEY --dev --value "${{ secrets.SEPOLIA_PRIVATE_KEY }}"
+
+      - run: npm run test:integration
