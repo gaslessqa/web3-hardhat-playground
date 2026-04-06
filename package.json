@@ -5,7 +5,7 @@
   "scripts": {
     "test": "hardhat test",
     "test:js": "hardhat test test/Counter.ts",
-    "test:sol": "hardhat test \"contracts/**/*.t.sol\"",
+    "test:sol": "hardhat test contracts/Counter.t.sol",
     "test:smoke": "hardhat test --grep \"smoke\"",
     "test:regression": "hardhat test --grep \"regression\"",
     "test:integration": "hardhat test test/Counter.sepolia.ts --network sepolia"
