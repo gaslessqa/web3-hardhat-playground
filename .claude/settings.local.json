@@ -4,7 +4,9 @@
       "Bash(cd:*)",
       "Bash(start:*)",
       "Bash(find F:/repos/web3-hardhat-playground/node_modules/@nomicfoundation/hardhat-keystore -name *.js)",
-      "Bash(node -e \"import\\(''@nomicfoundation/hardhat-utils/global-dir''\\).then\\(m => m.getConfigDir\\(\\)\\).then\\(console.log\\)\")"
+      "Bash(node -e \"import\\(''@nomicfoundation/hardhat-utils/global-dir''\\).then\\(m => m.getConfigDir\\(\\)\\).then\\(console.log\\)\")",
+      "WebFetch(domain:github.com)",
+      "WebSearch"
     ]
   }
 }
