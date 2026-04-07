@@ -8,7 +8,7 @@
     "test:sol": "hardhat test contracts/Counter.t.sol contracts/GaslessToken.t.sol",
     "test:smoke": "hardhat test --grep \"smoke\"",
     "test:regression": "hardhat test --grep \"regression\"",
-    "test:integration": "hardhat test test/Counter.sepolia.ts --network sepolia"
+    "test:integration": "hardhat test test/Counter.sepolia.ts test/GaslessToken.sepolia.ts --network sepolia"
   },
   "keywords": [],
   "author": "",
